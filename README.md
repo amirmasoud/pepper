@@ -1,15 +1,15 @@
-![Test](https://github.com/pepperlabs/pepper/workflows/Test/badge.svg?branch=master)
+![Test](https://github.com/amirmasoud/pepper/workflows/Test/badge.svg?branch=master)
 
-<a href="https://pepperlabs.github.io/docs/">
+<a href="https://amirmasoud.github.io/docs/">
     <p align="center">
-        <img src="https://raw.githubusercontent.com/pepperlabs/docs/master/static/read-the-documentation-button.png" />
+        <img src="https://raw.githubusercontent.com/amirmasoud/docs/master/static/read-the-documentation-button.png" />
     </p>
 </a>
 
 Install via composer:
 
 ```bash
-composer require pepperlabs/pepper
+composer require amirmasoud/pepper
 ```
 
 Pepper is an automatic GraphQL exposing Laravel package. It uses your application defined models to auto define properties and relations. It supports Query and Mutation out of the box.

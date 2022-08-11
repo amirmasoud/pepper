@@ -1,5 +1,5 @@
 {
-    "name": "pepperlabs/pepper",
+    "name": "amirmasoud/pepper",
     "description": "Pepper is a auto-generate GraphQL API for Laravel",
     "license": "MIT",
     "authors": [
