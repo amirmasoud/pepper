@@ -21,7 +21,7 @@ class PepperGrindCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Generate Pepper GraphQL classes';
+    protected $description = 'Generate Pepper Pepper classes';
 
     /**
      * Execute the console command.
@@ -89,7 +89,7 @@ class PepperGrindCommand extends Command
     }
 
     /**
-     * Initilize GraphQL endpoint required classes.
+     * Initilize Pepper endpoint required classes.
      *
      * @param  string  $model
      * @return void
@@ -106,7 +106,7 @@ class PepperGrindCommand extends Command
     }
 
     /**
-     * Ensure GraphQL config file exists, otherwise we would publish a new one.
+     * Ensure Pepper config file exists, otherwise we would publish a new one.
      *
      * @todo refactor to trait
      *
@@ -115,7 +115,7 @@ class PepperGrindCommand extends Command
     private function ensureGraphQLConfigExists(): void
     {
         if (! file_exists(config_path('graphql.php'))) {
-            $this->info('Publishing default GraphQL config...');
+            $this->info('Publishing default Pepper config...');
             $this->call('vendor:publish', [
                 '--provider' => 'Rebing\GraphQL\GraphQLServiceProvider',
             ]);

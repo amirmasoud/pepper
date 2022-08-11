@@ -12,7 +12,7 @@ return [
         | This option sets the default location of the generated classes in your
         | Laravel application.
         |
-        | Example: 'App\GraphQL' or 'GraphQL'
+        | Example: 'App\Pepper' or 'Pepper'
         |
         */
 
@@ -36,10 +36,10 @@ return [
 
     /*
     |-----------------------------------------------------------------------
-    | Available GraphQL classes
+    | Available Pepper classes
     |-----------------------------------------------------------------------
     |
-    | You can have a full list of Pepper GraphQL classes. {{studly}} and
+    | You can have a full list of Pepper Pepper classes. {{studly}} and
     | {{snake}} are replaced by their model base class name.
     |
     */
@@ -73,7 +73,7 @@ return [
 
     /*
     |-----------------------------------------------------------------------
-    | Global GraphQL classes
+    | Global Pepper classes
     |-----------------------------------------------------------------------
     |
     | These clesses are shared among all of the generated classes. you can

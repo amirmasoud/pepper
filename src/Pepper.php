@@ -18,7 +18,7 @@ use Prophecy\Exception\Doubler\ClassNotFoundException;
 use ReflectionClass;
 use ReflectionException;
 
-abstract class GraphQL
+abstract class Pepper
 {
     use TypeSupport, QuerySupport, InputSupport, OrderSupport, MutationSupport, AggregateSupport;
 
@@ -62,8 +62,8 @@ abstract class GraphQL
     }
 
     /**
-     * Default model for each GraphQL class is set to defined model namespace
-     * concated with studly case of the GraphQL class. for example a class
+     * Default model for each Pepper class is set to defined model namespace
+     * concated with studly case of the Pepper class. for example a class
      * of User and model name space of App\\ would resolve to App\User.
      *
      * @return string
@@ -74,7 +74,7 @@ abstract class GraphQL
     }
 
     /**
-     * If model property has been set for the GraphQL class, it would override
+     * If model property has been set for the Pepper class, it would override
      * the default generate model guessed based on the namespace and class
      * basename and will start use the defined model property instead.
      *
@@ -89,7 +89,7 @@ abstract class GraphQL
 
     /**
      * Make a new reflection from the model class. this method will be used
-     * to access the dynamic model of the GraphQL class.
+     * to access the dynamic model of the Pepper class.
      *
      * @return ReflectionClass
      *
@@ -100,12 +100,12 @@ abstract class GraphQL
         try {
             return new ReflectionClass($this->modelClass());
         } catch (ReflectionException $e) {
-            throw new ModelNotFoundException("Trying to get {$this->modelClass()} failed. please check pepper.namespace.models config to be correct and if you have defined model in GraphQL class, make sure {$this->modelClass()} model exists.");
+            throw new ModelNotFoundException("Trying to get {$this->modelClass()} failed. please check pepper.namespace.models config to be correct and if you have defined model in Pepper class, make sure {$this->modelClass()} model exists.");
         }
     }
 
     /**
-     * Get a new instance of the model for the GraphQL class.
+     * Get a new instance of the model for the Pepper class.
      *
      * @return mixed
      */
@@ -157,7 +157,7 @@ abstract class GraphQL
     /**
      * Using the defined model, we would query the table schema to get a listing
      * of the all columns avaialble in the column. later we would also scan
-     * through their types and cast their corresponsing GraphQL types.
+     * through their types and cast their corresponsing Pepper types.
      *
      * @return array
      */
@@ -232,9 +232,9 @@ abstract class GraphQL
     }
 
     /**
-     * Get related model GraphQL class. For post, user example, this method
-     * on calling Post GraphQL class and method user would return User
-     * GraphQL model.
+     * Get related model Pepper class. For post, user example, this method
+     * on calling Post Pepper class and method user would return User
+     * Pepper model.
      *
      * @param  string  $method
      * @return void
@@ -255,12 +255,12 @@ abstract class GraphQL
         try {
             return new ReflectionClass($this->modelClass());
         } catch (ReflectionException $e) {
-            throw new ClassNotFoundException("Trying to get {$this->relatedModelClass($method)} failed. please check pepper.namespace.root config to be correct and if GraphQL class exists.", $this->relatedModelClass($method));
+            throw new ClassNotFoundException("Trying to get {$this->relatedModelClass($method)} failed. please check pepper.namespace.root config to be correct and if Pepper class exists.", $this->relatedModelClass($method));
         }
     }
 
     /**
-     * Get a new instance of the related model for the GraphQL class.
+     * Get a new instance of the related model for the Pepper class.
      *
      * @param  string  $method
      * @return mixed
@@ -271,7 +271,7 @@ abstract class GraphQL
     }
 
     /**
-     * Get class of the related GraphQL.
+     * Get class of the related Pepper.
      *
      * @param  string  $method
      * @return string
@@ -312,11 +312,11 @@ abstract class GraphQL
         //     }
         // }
 
-        // throw new ClassNotFoundException("Could not find any Pepper GraphQL class that relates to {$related}.", $relatedGraphQLClass);
+        // throw new ClassNotFoundException("Could not find any Pepper Pepper class that relates to {$related}.", $relatedGraphQLClass);
     }
 
     /**
-     * Get all GraphQL classes.
+     * Get all Pepper classes.
      *
      * @return array
      */
@@ -332,7 +332,7 @@ abstract class GraphQL
     }
 
     /**
-     * Wheter corrosponding GraphQL class for relation exists or not.
+     * Wheter corrosponding Pepper class for relation exists or not.
      *
      * @param  string  $method
      * @return bool
@@ -345,7 +345,7 @@ abstract class GraphQL
     }
 
     /**
-     * Instance of the related GraphQL class.
+     * Instance of the related Pepper class.
      *
      * @param  string  $method
      * @return mixed
@@ -416,7 +416,7 @@ abstract class GraphQL
     }
 
     /**
-     * Guess field type for GraphQL.
+     * Guess field type for Pepper.
      *
      * @param  string  $field
      * @return string
@@ -468,7 +468,7 @@ abstract class GraphQL
     }
 
     /**
-     * Call default GraphQL type.
+     * Call default Pepper type.
      *
      * @param  string  $field
      * @return mixed
@@ -485,7 +485,7 @@ abstract class GraphQL
     }
 
     /**
-     * Generate name of GraphQL name based on config.
+     * Generate name of Pepper name based on config.
      *
      * @param  string  $name
      * @return string
@@ -514,7 +514,7 @@ abstract class GraphQL
     }
 
     /**
-     * Generate description of GraphQL class based on config.
+     * Generate description of Pepper class based on config.
      *
      * @param  string  $name
      * @return string

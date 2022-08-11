@@ -5,7 +5,6 @@ namespace Tests;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Pepper\PepperServiceProvider;
 use Rebing\GraphQL\GraphQLServiceProvider;
-use Tymon\JWTAuth\Providers\LaravelServiceProvider as JWTServiceProvider;
 
 abstract class TestCaseDatabase extends TestCase
 {
@@ -40,7 +39,6 @@ abstract class TestCaseDatabase extends TestCase
         }
 
         config(['auth.defaults.guard' => 'api']);
-        config(['auth.guards.api.driver' => 'jwt']);
 
         config(['auth.providers.users.model' => \Tests\Support\Models\User::class]);
 
@@ -59,7 +57,6 @@ abstract class TestCaseDatabase extends TestCase
     {
         $providers = [
             GraphQLServiceProvider::class,
-            JWTServiceProvider::class,
             PepperServiceProvider::class,
         ];
 
@@ -69,7 +66,7 @@ abstract class TestCaseDatabase extends TestCase
     protected function getPackageAliases($app): array
     {
         return [
-            'GraphQL' => GraphQL::class,
+            'Pepper' => GraphQL::class,
         ];
     }
 

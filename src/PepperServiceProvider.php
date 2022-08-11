@@ -39,7 +39,6 @@ class PepperServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/pepper.php', 'pepper');
 
-        $this->app->register(\Tymon\JWTAuth\Providers\LaravelServiceProvider::class);
         $this->app->register(\Rebing\GraphQL\GraphQLServiceProvider::class);
     }
 

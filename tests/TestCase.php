@@ -2,10 +2,9 @@
 
 namespace Tests;
 
-use Pepper\PepperServiceProvider;
-use Orchestra\Testbench\TestCase as BaseTestCase;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Pepper\PepperServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -27,6 +26,13 @@ class TestCase extends Orchestra
 
     protected function getEnvironmentSetUp($app)
     {
+        // config()->set('database.default', 'testing');
+
+        /*
+        $migration = include __DIR__.'/../database/migrations/create_users_table.php.stub';
+        $migration->up();
+        */
+
         if (env('TESTS_ENABLE_LAZYLOAD_TYPES') === '1') {
             $app['config']->set('graphql.lazyload_types', true);
         }

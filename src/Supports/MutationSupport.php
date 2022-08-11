@@ -32,7 +32,7 @@ trait MutationSupport
 
     /**
      * As deleted by PK is unique and would be one or none, the type of the
-     * GraphQL mutation type is also single and is not a list of models.
+     * Pepper mutation type is also single and is not a list of models.
      *
      * @return \GraphQL\Type\Definition\Type
      */
@@ -43,7 +43,7 @@ trait MutationSupport
 
     /**
      * As updated by PK is unique and would be one or none, the type of the
-     * GraphQL mutation type is also single and is not a list of models.
+     * Pepper mutation type is also single and is not a list of models.
      *
      * @return \GraphQL\Type\Definition\Type
      */
@@ -54,7 +54,7 @@ trait MutationSupport
 
     /**
      * As insert only one is unique and would be one or none, the type of the
-     * GraphQL mutation type is also single and is not a list of models.
+     * Pepper mutation type is also single and is not a list of models.
      *
      * @return \GraphQL\Type\Definition\Type
      */
@@ -86,7 +86,7 @@ trait MutationSupport
     }
 
     /**
-     * Get primary key for the delete by primary key GraphQL mutation with its
+     * Get primary key for the delete by primary key Pepper mutation with its
      * repective type. currently mixed primary keys are not supported and
      * only single column primary key is supported.
      *
@@ -105,7 +105,7 @@ trait MutationSupport
     }
 
     /**
-     * Get delete GraphQL mutation fields for being quired in input level as
+     * Get delete Pepper mutation fields for being quired in input level as
      * the condition(s) to delete multiple resources from the database(s).
      *
      * @return array
@@ -120,7 +120,7 @@ trait MutationSupport
     /**
      * Update a single resource identified by the primary key of the model and
      * and return the updated query as a Builder for handling any post update
-     * query requirments filled by the GraphQL mutation request selections.
+     * query requirments filled by the Pepper mutation request selections.
      *
      * @param  object  $root
      * @param  array  $args
@@ -144,7 +144,7 @@ trait MutationSupport
     /**
      * Update multiple resources identified by the conditions of the model and
      * and return the updated query as a Builder for handling any post update
-     * query requirments filled by the GraphQL mutation request selections.
+     * query requirments filled by the Pepper mutation request selections.
      *
      * @param  object  $root
      * @param  array  $args

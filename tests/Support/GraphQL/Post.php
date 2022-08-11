@@ -3,10 +3,10 @@
 namespace Tests\Support\GraphQL;
 
 use GraphQL\Type\Definition\Type;
-use Pepper\GraphQL;
+use Pepper\Pepper;
 use Rebing\GraphQL\Support\Facades\GraphQL as ParentGraphQL;
 
-class Post extends GraphQL
+class Post extends Pepper
 {
     public function setCoverType()
     {

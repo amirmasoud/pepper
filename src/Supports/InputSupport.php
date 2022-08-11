@@ -8,7 +8,7 @@ use Rebing\GraphQL\Support\Facades\GraphQL;
 trait InputSupport
 {
     /**
-     * Get all input fields can be present in a GraphQL query or mutation.
+     * Get all input fields can be present in a Pepper query or mutation.
      *
      * @return array
      */
@@ -50,7 +50,7 @@ trait InputSupport
     }
 
     /**
-     * Get type of of the related GraphQL input.
+     * Get type of of the related Pepper input.
      *
      * @param  string  $attribute
      * @return \GraphQL\Type\Definition\Type

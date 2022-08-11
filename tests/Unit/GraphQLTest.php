@@ -7,7 +7,7 @@ use App\Http\Pepper\Everything;
 use App\Http\Pepper\Post;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Tests\Support\GraphQL\test_graphql;
-use Tests\Support\GraphQL\TestGraphQL;
+use Tests\Support\GraphQL\TestPepper;
 use Tests\TestCaseDatabase;
 
 class GraphQLTest extends TestCaseDatabase
@@ -24,7 +24,7 @@ class GraphQLTest extends TestCaseDatabase
     {
         parent::setUp();
 
-        $this->test_1 = new TestGraphQL();
+        $this->test_1 = new TestPepper();
         $this->test_2 = new test_graphql();
         $this->post = new Post();
         $this->comment = new Comment();
@@ -33,7 +33,7 @@ class GraphQLTest extends TestCaseDatabase
     /** @test */
     public function base_classname_studly()
     {
-        $this->assertEquals($this->test_1->studly(), 'TestGraphQL');
+        $this->assertEquals($this->test_1->studly(), 'TestPepper');
         $this->assertEquals($this->test_2->studly(), 'TestGraphql');
     }
 

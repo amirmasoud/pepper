@@ -53,7 +53,7 @@ class AnyScalar extends ScalarType implements TypeConvertible
     }
 
     /**
-     * Parses an externally provided literal value (hardcoded in GraphQL query) to use as an input.
+     * Parses an externally provided literal value (hardcoded in Pepper query) to use as an input.
      *
      * In the case of an invalid node or value this method must throw an Exception
      *

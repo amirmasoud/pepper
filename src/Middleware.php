@@ -28,7 +28,7 @@ class Middleware
     }
 
     /**
-     * Register each GraphQL class.
+     * Register each Pepper class.
      *
      * @param  string  $parent
      * @param  string  $pepper
